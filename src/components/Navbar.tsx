@@ -11,14 +11,14 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <div className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="w-full px-4 py-3">
-        <div className="mx-auto flex max-w-screen-xl items-center justify-between">
+    <div className="sticky top-0 left-0 z-50 w-full border-b bg-background text-foreground shadow h-[80px]">
+      <nav className="w-full py-2">
+        <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-0">
-            <img src="src/assets/lmslogo-removebg-preview.png" className="h-16 w-16 text-primary pt-1"/>
-            <span className="text-2xl font-extrabold tracking-tight select-none">
-              Book<span className="text-primary">Hub</span>
+            <img src="src/assets/lmslogo-removebg-preview.png" className="h-16 w-16 text-blue-700 pt-1"/>
+            <span className="text-2xl text-blue-700 font-extrabold tracking-tight select-none">
+              Book<span className="text-pink-500">Hub</span>
             </span>
           </Link>
 
@@ -30,8 +30,8 @@ const Navbar = () => {
                 cn(
                   "font-medium transition-colors duration-200",
                   isActive
-                    ? "text-primary"
-                    : "text-gray-500 hover:text-gray-900"
+                    ? "text-blue-700"
+                    : "text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                 )
               }
             >
@@ -43,8 +43,8 @@ const Navbar = () => {
                 cn(
                   "font-medium transition-colors duration-200",
                   isActive
-                    ? "text-primary"
-                    : "text-gray-500 hover:text-gray-900"
+                    ? "text-blue-700"
+                    : "text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                 )
               }
             >
@@ -56,8 +56,8 @@ const Navbar = () => {
                 cn(
                   "font-medium transition-colors duration-200",
                   isActive
-                    ? "text-primary"
-                    : "text-gray-500 hover:text-gray-900"
+                    ? "text-blue-700"
+                    : "text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                 )
               }
             >
@@ -69,8 +69,8 @@ const Navbar = () => {
                 cn(
                   "font-medium transition-colors duration-200",
                   isActive
-                    ? "text-primary"
-                    :"text-gray-500 hover:text-gray-900"
+                    ? "text-blue-700"
+                    :"text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                 )
               }
             >
@@ -100,7 +100,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden px-4 pb-4 pt-2 border-t">
+        <div className="md:hidden px-4 pb-4 pt-2 border-t absolute w-full bg-background text-foreground z-50">
           <div className="mx-auto max-w-screen-xl flex flex-col space-y-3">
             <NavLink
               to="/"
@@ -108,7 +108,7 @@ const Navbar = () => {
                 cn(
                   "font-medium transition-colors duration-200 py-2",
                   isActive
-                    ? "text-primary"
+                    ? "text-blue-700"
                     : "text-muted-foreground hover:text-foreground"
                 )
               }
@@ -122,7 +122,7 @@ const Navbar = () => {
                 cn(
                   "font-medium transition-colors duration-200 py-2",
                   isActive
-                    ? "text-primary"
+                    ? "text-blue-700"
                     : "text-muted-foreground hover:text-foreground"
                 )
               }
@@ -136,7 +136,7 @@ const Navbar = () => {
                 cn(
                   "font-medium transition-colors duration-200 py-2",
                   isActive
-                    ? "text-primary"
+                    ? "text-blue-700"
                     : "text-muted-foreground hover:text-foreground"
                 )
               }
@@ -150,7 +150,7 @@ const Navbar = () => {
                 cn(
                   "font-medium transition-colors duration-200 py-2",
                   isActive
-                    ? "text-primary"
+                    ? "text-blue-700"
                     : "text-muted-foreground hover:text-foreground"
                 )
               }

@@ -1,4 +1,5 @@
 import Root from "@/layout/Root";
+import AllBooks from "@/pages/AllBooks";
 import Home from "@/pages/Home";
 import { createBrowserRouter } from "react-router";
 
@@ -12,6 +13,10 @@ export const router = createBrowserRouter([
         path: "/",
         Component: Home
        },
+       {
+        path: "/books",
+        Component: AllBooks
+       }
     ],
   },
 ]);

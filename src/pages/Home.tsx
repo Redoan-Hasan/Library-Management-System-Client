@@ -4,18 +4,15 @@ import { Button } from "@/components/ui/button";
 const Home = () => {
   return (
     <div className="relative h-[calc(100vh-80px)]">
-      {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <img 
           src="/src/assets/bookCollectionBanner.jpg" 
           alt="Book Collection" 
           className="w-full h-full object-cover"
         />
-        {/* Overlay for better text visibility */}
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
       
-      {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
           Welcome to <span className="text-blue-700">Book</span><span className="text-pink-500">Hub</span>

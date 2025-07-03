@@ -1,3 +1,4 @@
+import Loader from "@/components/Loader";
 import Root from "@/layout/Root";
 import AllBooks from "@/pages/AllBooks";
 import Home from "@/pages/Home";
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
        {
         path: "/books",
         Component: AllBooks
+       },
+       {
+        path:"/loader",
+        Component: Loader
        }
     ],
   },

@@ -1,40 +1,48 @@
+import Loader from "@/components/Loader";
 import { Button } from "@/components/ui/button";
+import { useGetBooksQuery } from "@/redux/api/bookApi";
+import type { responseBookDataType } from "@/types/bookTypes";
 import { Pencil, Trash2, BookOpen } from "lucide-react";
 
 const AllBooks = () => {
-  // Static book data for demonstration
-  const books = [
-    {
-      id: 1,
-      title: "To Kill a Mockingbird",
-      author: "Harper Lee",
-      genre: "Classic",
-      isbn: "978-0061120084",
-      copies: 5,
-      available: true,
-    },
-    {
-      id: 2,
-      title: "1984",
-      author: "George Orwell",
-      genre: "Dystopian",
-      isbn: "978-0451524935",
-      copies: 3,
-      available: true,
-    },
-    {
-      id: 3,
-      title: "The Great Gatsby",
-      author: "F. Scott Fitzgerald",
-      genre: "Classic",
-      isbn: "978-0743273565",
-      copies: 2,
-      available: false,
-    },
-  ];
+    const {data, isLoading} = useGetBooksQuery(undefined);
+    if(isLoading){
+        return <Loader />;
+    }
+    console.log(data);
+//   const books = [
+//     {
+//       id: 1,
+//       title: "To Kill a Mockingbird",
+//       author: "Harper Lee",
+//       genre: "Classic",
+//       isbn: "978-0061120084",
+//       copies: 5,
+//       available: true,
+//     },
+//     {
+//       id: 2,
+//       title: "1984",
+//       author: "George Orwell",
+//       genre: "Dystopian",
+//       isbn: "978-0451524935",
+//       copies: 3,
+//       available: true,
+//     },
+//     {
+//       id: 3,
+//       title: "The Great Gatsby",
+//       author: "F. Scott Fitzgerald",
+//       genre: "Classic",
+//       isbn: "978-0743273565",
+//       copies: 2,
+//       available: false,
+//     },
+//   ];
 
   return (
-    <div className="max-w-screen-xl mx-auto py-6 px-2 sm:px-4">
+    <div className="max-w-screen-xl mx-auto min-h-[calc(100vh-80px)] py-6 px-2 sm:px-4">
+        {}
       <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-blue-700">
         All Books
       </h1>
@@ -68,9 +76,9 @@ const AllBooks = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-border">
-            {books.map((book, index) => (
+            {data.data.map((book: responseBookDataType, index:number) => (
               <tr
-                key={book.id}
+                key={book._id}
                 className="bg-card hover:bg-muted/50 transition-colors"
               >
                 <td className="p-2 sm:px-3 sm:py-2 text-foreground">

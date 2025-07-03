@@ -1,5 +1,5 @@
-import Loader from "@/components/Loader";
 import Root from "@/layout/Root";
+import AddBook from "@/pages/AddBook";
 import AllBooks from "@/pages/AllBooks";
 import Home from "@/pages/Home";
 import { createBrowserRouter } from "react-router";
@@ -19,8 +19,8 @@ export const router = createBrowserRouter([
         Component: AllBooks
        },
        {
-        path:"/loader",
-        Component: Loader
+        path:"/create-book",
+        Component: AddBook
        }
     ],
   },

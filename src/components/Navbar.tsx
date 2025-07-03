@@ -51,7 +51,7 @@ const Navbar = () => {
               All Books
             </NavLink>
             <NavLink
-              to="/add-book"
+              to="/create-book"
               className={({ isActive }) =>
                 cn(
                   "font-medium transition-colors duration-200",
@@ -131,7 +131,7 @@ const Navbar = () => {
               All Books
             </NavLink>
             <NavLink
-              to="/add-book"
+              to="/create-book"
               className={({ isActive }) =>
                 cn(
                   "font-medium transition-colors duration-200 py-2",

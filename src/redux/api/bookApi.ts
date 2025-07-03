@@ -7,7 +7,14 @@ export const bookApi = createApi({
     getBooks: builder.query({
         query: () => "/books",
     }),
+    createBooks: builder.mutation({
+        query:(bookData)=>({
+            url:"/books",
+            method:'POST',
+            body:bookData,
+        })
+    })
   })
 })
 
-export const {useGetBooksQuery} = bookApi;
+export const {useGetBooksQuery, useCreateBooksMutation} = bookApi;

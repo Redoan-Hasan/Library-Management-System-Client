@@ -13,8 +13,11 @@ export const bookApi = createApi({
             method:'POST',
             body:bookData,
         })
+    }),
+    findOneBook: builder.query({
+      query:(id)=> `/books/${id}`,
     })
   })
 })
 
-export const {useGetBooksQuery, useCreateBooksMutation} = bookApi;
+export const {useGetBooksQuery, useCreateBooksMutation, useFindOneBookQuery} = bookApi;

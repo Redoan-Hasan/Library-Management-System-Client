@@ -151,6 +151,8 @@ const AddBook = () => {
             type="number"
             {...register("isbn", {
               required: "ISBN is required",
+              validate: (value) =>
+                String(value).length >= 13 || "ISBN must be at least 13 digits",
             })}
             className="w-full px-4 py-2 rounded-lg border border-primary/30 bg-white/80 dark:bg-slate-900/60 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition shadow-sm"
             placeholder="ISBN Number"

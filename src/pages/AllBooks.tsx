@@ -1,59 +1,59 @@
 import Loader from "@/components/Loader";
+import SingleBookViewModal from "@/components/SingleBookViewModal";
 import { Button } from "@/components/ui/button";
 import { useGetBooksQuery } from "@/redux/api/bookApi";
 import type { responseBookDataType } from "@/types/bookTypes";
 import { Pencil, Trash2, BookOpen } from "lucide-react";
 
 const AllBooks = () => {
-    const {data, isLoading} = useGetBooksQuery(undefined,{
-        refetchOnMountOrArgChange:true,
-        refetchOnFocus:true,
-        refetchOnReconnect:true
-    });
-    if(isLoading){
-        return <Loader />;
-    }
-    console.log(data);
+  const { data, isLoading } = useGetBooksQuery(undefined, {
+    refetchOnMountOrArgChange: true,
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+  if (isLoading) {
+    return <Loader />;
+  }
+  console.log(data);
 
   return (
     <div className="max-w-screen-xl mx-auto min-h-[calc(100vh-80px)] py-6 px-2 sm:px-4">
       <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-blue-700">
         All Books
       </h1>
-
       <div className="w-full overflow-x-auto rounded-lg border border-border bg-card shadow-sm">
         <table className="w-full text-xs sm:text-sm border-collapse">
           <thead className="bg-muted/50 text-muted-foreground">
             <tr className="border-b border-border">
-              <th className="p-2 sm:px-3 sm:py-2 text-left font-medium">#</th>
-              <th className="p-2 sm:px-3 sm:py-2 text-left font-medium">
+              <th className="p-2 sm:px-3 sm:py-2 font-medium text-center">#</th>
+              <th className="p-2 sm:px-3 sm:py-2 font-medium text-center">
                 Title
               </th>
-              <th className="p-2 sm:px-3 sm:py-2 text-left font-medium">
+              <th className="p-2 sm:px-3 sm:py-2 font-medium text-center">
                 Author
               </th>
-              <th className="p-2 sm:px-3 sm:py-2 text-left font-medium">
+              <th className="p-2 sm:px-3 sm:py-2 font-medium text-center">
                 Genre
               </th>
-              <th className="p-2 sm:px-3 sm:py-2 text-left font-medium">
+              <th className="p-2 sm:px-3 sm:py-2 font-medium text-center">
                 ISBN
               </th>
-              <th className="p-2 sm:px-3 sm:py-2 text-left font-medium">
+              <th className="p-2 sm:px-3 sm:py-2 font-medium text-center">
                 Copies
               </th>
-              <th className="p-2 sm:px-3 sm:py-2 text-left font-medium">
+              <th className="p-2 sm:px-3 sm:py-2 font-medium text-center">
                 Status
               </th>
-              <th className="p-2 sm:px-3 sm:py-2 text-center font-medium">
+              <th className="p-2 sm:px-3 sm:py-2 font-medium text-center">
                 Actions
               </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-border">
-            {data.data.map((book: responseBookDataType, index:number) => (
+            {data.data.map((book: responseBookDataType, index: number) => (
               <tr
                 key={book._id}
-                className="bg-card hover:bg-muted/50 transition-colors"
+                className="bg-card hover:bg-muted/50 transition-colors text-center"
               >
                 <td className="p-2 sm:px-3 sm:py-2 text-foreground">
                   {index + 1}
@@ -97,6 +97,7 @@ const AllBooks = () => {
                       <BookOpen className="h-3 w-3 mr-1" />
                       <span>Borrow</span>
                     </Button>
+                    <SingleBookViewModal id={book._id} />
                     <Button
                       variant="ghost"
                       size="icon"

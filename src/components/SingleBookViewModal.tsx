@@ -31,7 +31,7 @@ const SingleBookViewModal = ({ id }: { id: string }) => {
           <Eye className="h-3 w-3" />
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] p-0 bg-gradient-to-br from-blue-50 via-white to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border-0 shadow-2xl rounded-2xl">
+      <DialogContent className="sm:max-w-[425px] p-0 bg-gradient-to-br from-blue-50 via-white to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border-0 shadow-2xl rounded-2xl max-h-[90vh] overflow-auto">
         <div className="p-6">
           <DialogHeader>
             <DialogTitle className="text-center text-2xl font-extrabold text-primary dark:text-pink-400 mb-2">
@@ -43,40 +43,40 @@ const SingleBookViewModal = ({ id }: { id: string }) => {
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-blue-700 dark:text-pink-300">
+            <div className="flex flex-wrap items-start gap-2">
+              <span className="font-semibold text-blue-700 dark:text-pink-300 whitespace-nowrap">
                 Title:
               </span>
-              <span className="text-foreground">{book.title}</span>
+              <span className="text-foreground break-words">{book.title}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-blue-700 dark:text-pink-300">
+            <div className="flex flex-wrap items-start gap-2">
+              <span className="font-semibold text-blue-700 dark:text-pink-300 whitespace-nowrap">
                 Author:
               </span>
-              <span className="text-foreground">{book.author}</span>
+              <span className="text-foreground break-words">{book.author}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-blue-700 dark:text-pink-300">
+            <div className="flex flex-wrap items-start gap-2">
+              <span className="font-semibold text-blue-700 dark:text-pink-300 whitespace-nowrap">
                 Genre:
               </span>
-              <span className="text-foreground">
+              <span className="text-foreground break-words">
                 {book.genre.replace("_", " ")}
               </span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-blue-700 dark:text-pink-300">
+            <div className="flex flex-wrap items-start gap-2">
+              <span className="font-semibold text-blue-700 dark:text-pink-300 whitespace-nowrap">
                 ISBN:
               </span>
-              <span className="text-foreground">{book.isbn}</span>
+              <span className="text-foreground break-words">{book.isbn}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-blue-700 dark:text-pink-300">
+            <div className="flex flex-wrap items-start gap-2">
+              <span className="font-semibold text-blue-700 dark:text-pink-300 whitespace-nowrap">
                 Copies:
               </span>
-              <span className="text-foreground">{book.copies}</span>
+              <span className="text-foreground break-words">{book.copies}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-blue-700 dark:text-pink-300">
+            <div className="flex flex-wrap items-start gap-2">
+              <span className="font-semibold text-blue-700 dark:text-pink-300 whitespace-nowrap">
                 Availability:
               </span>
               <span
@@ -93,7 +93,7 @@ const SingleBookViewModal = ({ id }: { id: string }) => {
               <span className="font-semibold text-blue-700 dark:text-pink-300">
                 Description:
               </span>
-              <p className="mt-1 text-foreground text-sm bg-muted/50 dark:bg-muted/30 rounded-lg p-2">
+              <p className="mt-1 text-foreground text-sm bg-muted/50 dark:bg-muted/30 rounded-lg p-2 break-words">
                 {book.description}
               </p>
             </div>

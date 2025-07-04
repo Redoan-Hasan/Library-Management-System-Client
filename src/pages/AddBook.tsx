@@ -41,12 +41,7 @@ const AddBook = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IBook>({
-    defaultValues: {
-      genre: "FICTION",
-      copies: 1,
-    },
-  });
+  } = useForm<IBook>();
 
   if (isLoading) {
     return <Loader />;

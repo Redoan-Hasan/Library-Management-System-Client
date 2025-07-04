@@ -1,9 +1,12 @@
+import EditBookModal from "@/components/EditBookModal";
 import Loader from "@/components/Loader";
 import SingleBookViewModal from "@/components/SingleBookViewModal";
 import { Button } from "@/components/ui/button";
-import { useGetBooksQuery } from "@/redux/api/bookApi";
+import { useDeleteBookMutation, useGetBooksQuery } from "@/redux/api/bookApi";
 import type { responseBookDataType } from "@/types/bookTypes";
-import { Pencil, Trash2, BookOpen } from "lucide-react";
+import { Trash2, BookOpen } from "lucide-react";
+import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 const AllBooks = () => {
   const { data, isLoading } = useGetBooksQuery(undefined, {
@@ -11,6 +14,36 @@ const AllBooks = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
+  const [deleteBook, { isError }] = useDeleteBookMutation();
+  useEffect(() => {
+    if (isError) {
+      Swal.fire({
+        title: "Error",
+        text: "Something went wrong! Please try again.",
+        icon: "error",
+      });
+    }
+  }, [isError]);
+  const handleDelete = (id: string) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteBook(id);
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+      }
+    });
+  };
   if (isLoading) {
     return <Loader />;
   }
@@ -98,14 +131,9 @@ const AllBooks = () => {
                       <span>Borrow</span>
                     </Button>
                     <SingleBookViewModal id={book._id} />
+                    <EditBookModal id={book._id} />
                     <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-7 w-7 text-blue-600 dark:text-blue-400"
-                    >
-                      <Pencil className="h-3 w-3" />
-                    </Button>
-                    <Button
+                      onClick={() => handleDelete(book?._id)}
                       variant="ghost"
                       size="icon"
                       className="h-7 w-7 text-red-600 dark:text-red-400"

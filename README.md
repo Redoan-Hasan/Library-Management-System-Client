@@ -1,5 +1,7 @@
 # 📚 BookHub - Library Management System
 
+**🌐 [View Live Site Here! 🚀](https://library-management-system-client-indol.vercel.app)**
+
 <div align="center">
 
 ![BookHub Logo](https://i.postimg.cc/R0z3nmP5/lmslogo-removebg-preview.png)
@@ -251,17 +253,6 @@ This frontend application connects to a Node.js/Express backend with the followi
 - **Cards**: Clean, modern card layouts
 - **Tables**: Responsive data tables
 
----
-
-## 🔒 Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-VITE_API_BASE_URL=https://library-management-system-server-puce.vercel.app/api
-```
-
----
 
 ## 🚀 Deployment
 
@@ -291,26 +282,12 @@ VITE_API_BASE_URL=https://library-management-system-server-puce.vercel.app/api
 
 ---
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 👨‍💻 Author
 
 **Your Name**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+- GitHub: [Redoan Hasan](https://github.com/Redoan-Hasan)
+- LinkedIn: [Redoan Hasan](https://www.linkedin.com/in/redoanhasan)
 
 ---
 
-<div align="center">
-
-**Made with ❤️ using React, TypeScript, and Tailwind CSS**
-
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/library-management-system?style=social)](https://github.com/yourusername/library-management-system)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/library-management-system?style=social)](https://github.com/yourusername/library-management-system)
-
-</div>

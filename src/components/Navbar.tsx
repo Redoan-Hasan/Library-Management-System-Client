@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-0">
-            <img src="src/assets/lmslogo-removebg-preview.png" className="h-16 w-16 text-blue-700 pt-1"/>
+            <img src="https://i.postimg.cc/R0z3nmP5/lmslogo-removebg-preview.png" className="h-16 w-16 text-blue-700 pt-1"/>
             <span className="text-2xl text-blue-700 font-extrabold tracking-tight select-none">
               Book<span className="text-pink-500">Hub</span>
             </span>

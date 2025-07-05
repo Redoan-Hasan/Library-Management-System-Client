@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 
 const Home = () => {
   return (
-    <div className="relative h-[calc(100vh-80px)]">
+    <div className="relative h-[calc(100vh-133px)]">
       <div className="absolute inset-0 w-full h-full">
         <img 
-          src="/src/assets/bookCollectionBanner.jpg" 
+          src="https://i.postimg.cc/23RYXkLC/book-Collection-Banner.jpg" 
           alt="Book Collection" 
           className="w-full h-full object-cover"
         />

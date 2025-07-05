@@ -10,11 +10,12 @@ import { useEffect } from "react";
 import Swal from "sweetalert2";
 
 const AllBooks = () => {
-  const { data, isLoading } = useGetBooksQuery(undefined, {
+  const { data, isLoading } = useGetBooksQuery("", {
     refetchOnMountOrArgChange: true,
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
+  console.log(data);
   const [deleteBook, { isError }] = useDeleteBookMutation();
   useEffect(() => {
     if (isError) {
@@ -48,10 +49,9 @@ const AllBooks = () => {
   if (isLoading) {
     return <Loader />;
   }
-  console.log(data);
 
   return (
-    <div className="max-w-screen-xl mx-auto min-h-[calc(100vh-80px)] py-6 px-2 sm:px-4">
+    <div className="max-w-screen-xl mx-auto min-h-[calc(100vh-133px)] py-6 px-2 sm:px-4">
       <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-blue-700">
         All Books
       </h1>
@@ -84,7 +84,7 @@ const AllBooks = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-border">
-            {data.data.map((book: responseBookDataType, index: number) => (
+            {data?.data?.map((book: responseBookDataType, index: number) => (
               <tr
                 key={book._id}
                 className="bg-card hover:bg-muted/50 transition-colors text-center"

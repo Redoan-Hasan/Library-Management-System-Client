@@ -58,7 +58,7 @@ const AddBook = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto min-h-[calc(100vh-80px)] py-8 px-2 sm:px-4 flex items-center">
+    <div className="max-w-xl mx-auto min-h-[calc(100vh-133px)] py-8 px-2 sm:px-4 flex items-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full space-y-7 bg-gradient-to-br from-blue-50/80 via-white/90 to-pink-50/80 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 p-8 rounded-2xl border border-primary/30 shadow-2xl backdrop-blur-md"

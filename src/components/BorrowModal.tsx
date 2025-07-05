@@ -28,7 +28,7 @@ import { format } from "date-fns";
 import { BookOpen, CalendarIcon } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { useEffect, useState } from "react";
-import { useGetBorrowsMutation } from "@/redux/api/borrowApi";
+import { useCreateBorrowsMutation } from "@/redux/api/borrowApi";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 
@@ -43,7 +43,7 @@ const BorrowModal = ({
 }) => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  const [getBorrows,{isError,isSuccess}] = useGetBorrowsMutation();
+  const [getBorrows,{isError,isSuccess}] = useCreateBorrowsMutation();
   const form = useForm({
     defaultValues: {
       quantity: "",

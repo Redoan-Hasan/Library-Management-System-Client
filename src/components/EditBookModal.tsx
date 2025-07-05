@@ -53,8 +53,8 @@ const EditBookModal = ({ id }: { id: string }) => {
     const onSubmit: SubmitHandler<IBook> = async (data) => {
     const mainData = {...data,id}
     console.log(mainData);
-    const updatedBook = await updateBook(mainData)
-    console.log(updatedBook);
+    await updateBook(mainData)
+
   };
   if (isLoading || updateLoading) {
     return <Loader />;

@@ -15,7 +15,6 @@ const AllBooks = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
-  console.log(data);
   const [deleteBook, { isError }] = useDeleteBookMutation();
   useEffect(() => {
     if (isError) {

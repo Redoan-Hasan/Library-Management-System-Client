@@ -48,13 +48,12 @@ const AddBook = () => {
   }
 
   const onSubmit: SubmitHandler<IBook> = async (data) => {
-    const createdBook = await createBooks({
+    await createBooks({
       ...data,
       isbn: String(data.isbn),
       copies: Number(data.copies),
       availbility: true,
     });
-    console.log(createdBook);
   };
 
   return (

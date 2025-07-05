@@ -1,10 +1,11 @@
+import BorrowModal from "@/components/BorrowModal";
 import EditBookModal from "@/components/EditBookModal";
 import Loader from "@/components/Loader";
 import SingleBookViewModal from "@/components/SingleBookViewModal";
 import { Button } from "@/components/ui/button";
 import { useDeleteBookMutation, useGetBooksQuery } from "@/redux/api/bookApi";
 import type { responseBookDataType } from "@/types/bookTypes";
-import { Trash2, BookOpen } from "lucide-react";
+import { Trash2 } from "lucide-react";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 
@@ -119,17 +120,7 @@ const AllBooks = () => {
                 </td>
                 <td className="p-2 sm:px-3 sm:py-2">
                   <div className="flex items-center justify-center gap-1">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className={`h-7 px-2 text-xs ${
-                        !book.available ? "opacity-50 cursor-not-allowed" : ""
-                      }`}
-                      disabled={!book.available}
-                    >
-                      <BookOpen className="h-3 w-3 mr-1" />
-                      <span>Borrow</span>
-                    </Button>
+                    <BorrowModal availability={book.available} bookId={book._id} bookCopies={book.copies} />
                     <SingleBookViewModal id={book._id} />
                     <EditBookModal id={book._id} />
                     <Button
